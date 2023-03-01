@@ -26,7 +26,7 @@ class EngineerRequest extends FormRequest
             'last_name' => 'required|max:255',
             'first_name_furigana' => 'required|max:255',
             'last_name_furigana' => 'required|max:255',
-            'first_name' => 'required|max:255',
+            'gender' => 'required|max:255',
             'first_name' => 'required|max:255',
             
         ];
