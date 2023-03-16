@@ -141,12 +141,9 @@
         @foreach(App\Models\Engineer::ENGINEER_STATUS_OBJECT_2 as $key => $value)
         <option value="{{ $key }}" @if($key === $engineer->background) selected @endif>{{ $value }}</option>
         @endforeach
-        </select>
-
-      
+        </select> 
       </dd>
       </div>
-
 
 
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

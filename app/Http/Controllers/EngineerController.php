@@ -66,7 +66,7 @@ class EngineerController extends Controller
 
         ]); 
     
-        return redirect('show'); 
+        return redirect('show')->with('flash_message', '登録が完了しました'); 
     } catch (\Exception $ex) { 
         logger($ex->getMessage()); 
         return redirect('dashboard')->withErrors($ex->getMessage()); 
@@ -158,13 +158,11 @@ class EngineerController extends Controller
         $engineer->address = $request->input('address');
         $engineer->station = $request->input('station');
         $engineer->background = $request->input('background');
-        $engineer->phonenumber = $request->file('resume');
-        $engineer->job_history_sheet = $request->file('job_history_sheet');
         $engineer->comment = $request->input('comment');
         $engineer->save();
 
         DB::commit();
-        return redirect('show');
+        return redirect('show')->with('flash_message', '登録情報を更新しました');
     } catch (\Exception $ex) {
         DB::rollback();
         logger($ex->getMessage());
