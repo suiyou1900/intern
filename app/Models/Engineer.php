@@ -69,4 +69,25 @@ public const ENGINEER_STATUS_ARRAY_2 = [
     self::ENGINEER_STATUS_UNIV,
 ];
 
+//検索機能の実装
+
+public function scopeSearch($query, $search)
+{
+
+  $first_name = $search['first_name'] ?? '';
+  $last_name = $search['last_name'] ?? '';
+  
+  $query->when($first_name, function ($query, $first_name) {
+    $query->where('first_name', 'like', "%$first_name%");
+  });
+
+  $query->when($last_name, function ($query, $last_name) {
+    $query->where('last_name', 'like', "%$last_name%");
+  });
+
+
+  return $query;
+}
+
+
 }

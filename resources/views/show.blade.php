@@ -7,6 +7,37 @@
    
    
 <div class="relative overflow-x-auto  sm:rounded-lg">
+<div class="pt-8">
+<div class="max-w-7xl pb-8 mx-auto sm:px-6 lg:px-10">
+<div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+<div class="m-5">
+
+<form action="{{ route('show') }}">
+<div class="flex flex-row">
+
+
+
+<div class="col-span-6 sm:col-span-3 p-2 w-48">
+<label for="name" class="block text-sm font-medium text-gray-700">苗字</label>
+<input type="text" name="first_name" id="name" value="{{ $first_name }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+</div>
+<div class="col-span-6 sm:col-span-3 p-2 w-48">
+<label for="name" class="block text-sm font-medium text-gray-700">名前</label>
+<input type="text" name="last_name" id="name" value="{{ $last_name }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+</div>
+
+<div class="col-span-6 sm:col-span-3 p-2 w-48 relative">
+<button type="submit" class="absolute inset-x-0 bottom-2 mr-2 shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">検索</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+
     <table class="w-full text-sm text-left text-gray-900">
         <thead class="text-xs text-gray-900 uppercase bg-white  dark:text-gray-900">
             <tr>

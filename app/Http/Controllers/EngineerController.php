@@ -44,23 +44,29 @@ class EngineerController extends Controller
         return redirect()->route('create', ['id' => $request->input('id')])->withErrors($validated)->withInput();
     }
 
-    if (is_null($request->input('resume'))) {
-        return response()->json('base64の画像テキストが指定されていません。');
-        $image = base64_decode($request->image_base64_text);
-        Storage::put('resume.png', $image);
-    }
-    if (is_null($request->input('job_historysheet'))) {
-        return response()->json('base64の画像テキストが指定されていません。');
-        $image = base64_decode($request->image_base64_text);
-        Storage::put('resume.png', $image);
-    }
     
-    
-   
    
 
     try { 
-        Engineer::create($request->all()); 
+        Engineer::create([
+        'first_name' => $request->first_name,
+        'last_name' => $request->last_name,
+        'first_name_furigana' => $request->first_name_furigana,
+        'last_name_furigana' => $request->last_name_furigana,
+        'birthday' => $request->birthday,
+        'email' => $request->email,
+        'gender' => $request->gender,
+        'phonenumber' =>$request->phonenumber,
+        'postalcode' => $request->postalcode,
+        'prefecture' => $request->prefecture,
+        'address' => $request->address,
+        'station' => $request->station,
+        'background' => $request->background,
+        'resume'=> $request->resume,
+        'job_history_sheet'=> $request->job_history_sheet,
+        'comment'=>$request->comment,
+
+        ]); 
     
         return redirect('show'); 
     } catch (\Exception $ex) { 
@@ -76,12 +82,27 @@ class EngineerController extends Controller
         return view('confirm');
     }
 
-    public function show()
+    public function show(Request $request)
     {
-        $Engineers=Engineer::paginate(5);
+        //検索機能の実装
+
+        $input = $request->all();
+        $Engineers=Engineer::search($input)->orderBy('id','asc')->paginate(5);
+        $first_name = Engineer::select('first_name')->groupBy('first_name')->pluck('first_name');
+        $last_name = Engineer::select('last_name')->groupBy('last_name')->pluck('last_name');
+      
 
         return view('show',
-        ['Engineers'=>$Engineers]
+        ['Engineers'=>$Engineers,
+         'first_name'=>$first_name,
+         'last_name'=>$last_name,
+
+         'first_name' => $input['first_name'] ?? '',
+         'last_name' => $input['last_name'] ?? '',
+        
+        ],
+
+
     );
     }
 
