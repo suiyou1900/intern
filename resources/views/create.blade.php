@@ -166,6 +166,9 @@
         <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">履歴書</label>
         <div class="mt-2.5">
           <input type='file' name="resume" rows="4" class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"></input>
+          @error('resume')
+          <div class="text-red-600">{{ $message }}</div>
+          @enderror   
         </div>
       </div>
      
@@ -173,6 +176,9 @@
         <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">職務経歴書</label>
         <div class="mt-2.5">
           <input type='file' name="job_history_sheet" rows="4" class="form-control block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"></input>
+          @error('job_history_sheet')
+          <div class="text-red-600">{{ $message }}</div>
+          @enderror   
         </div>
       </div>
 

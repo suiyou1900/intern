@@ -165,7 +165,10 @@ return [
         'prefecture'=>'都道府県',
         'address'=>'住所',
         'station'=>'最寄駅',
-        'background'=>'最終学歴'
+        'background'=>'最終学歴',
+        'resume'=>'履歴書',
+        'job_history_sheet'=>'職務経歴書'
+
     ],
 
 ];

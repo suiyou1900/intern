@@ -32,12 +32,14 @@ class EngineerController extends Controller
         'birthday' => 'required|date',
         'email' => 'required|max:255',
         'gender' => 'required',
-        'phonenumber' => 'required',
+        'phonenumber' => ['required', 'regex:/^[0-9\-]+$/i', 'max:14'],
         'postalcode' => 'required',
         'prefecture' => 'required',
         'address' => 'required',
         'station' => 'required',
         'background' => 'required',
+        'resume'=>'image',
+        'job_history_sheet'=>'image'
     ]);
     
     if($validated->fails()) {
