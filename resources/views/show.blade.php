@@ -95,7 +95,7 @@
                    {{$Engineer->prefecture}}
                 </td>
                 <td class="px-6 py-4">
-                <a href="{{$Engineer->resume}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                <a href="{{ \Storage::url($Engineer->resume) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                 <button class="text-sm shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                 DL
                 </button>

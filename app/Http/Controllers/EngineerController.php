@@ -44,8 +44,6 @@ class EngineerController extends Controller
         return redirect()->route('create', ['id' => $request->input('id')])->withErrors($validated)->withInput();
     }
 
-    
-   
 
     try { 
         Engineer::create([
@@ -62,8 +60,8 @@ class EngineerController extends Controller
         'address' => $request->address,
         'station' => $request->station,
         'background' => $request->background,
-        'resume'=> $request->resume,
-        'job_history_sheet'=> $request->job_history_sheet,
+        'resume'=> $request->file('resume')->store('public'),
+        'job_history_sheet'=> $request->file('job_history_sheet')->store('public'),
         'comment'=>$request->comment,
 
         ]); 
@@ -73,13 +71,9 @@ class EngineerController extends Controller
         logger($ex->getMessage()); 
         return redirect('dashboard')->withErrors($ex->getMessage()); 
     } 
+   
   
         
-    }
-
-    public function confirm(Request $request)
-    {
-        return view('confirm');
     }
 
     public function show(Request $request)
@@ -137,7 +131,7 @@ class EngineerController extends Controller
         'first_name_furigana' => 'required|max:255',
         'last_name_furigana' => 'required|max:255',
         'birthday' => 'required|date',
-        'email' => 'required|max:255',
+        'email' => ['required', 'email'],
         'phonenumber' => 'required',
         'postalcode' => 'required',
         'address' => 'required',
@@ -164,6 +158,8 @@ class EngineerController extends Controller
         $engineer->address = $request->input('address');
         $engineer->station = $request->input('station');
         $engineer->background = $request->input('background');
+        $engineer->phonenumber = $request->file('resume');
+        $engineer->job_history_sheet = $request->file('job_history_sheet');
         $engineer->comment = $request->input('comment');
         $engineer->save();
 

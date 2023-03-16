@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EngineerController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,13 +32,15 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/create',[EngineerController::class,'create'])->name('create');
 Route::post('/new', [EngineerController::class, 'new'])->name('new');
-Route::post('/confirm',[EngineerController::class,'confirm'])->name('confirm');
 Route::get('/show',[EngineerController::class,'show'])->name('show');
 Route::get('/edit/{id}', [EngineerController::class, 'edit'])->name('edit');
 Route::get('/detail/{id}', [EngineerController::class, 'detail'])->name('detail');
 Route::patch('/update', [EngineerController::class, 'update'])->name('update');
 Route::get('/update', [EngineerController::class, 'update'])->name('update');
 Route::delete('/delete/{id}', [EngineerController::class, 'delete'])->name('delete'); 
+
+
+
 
 
 

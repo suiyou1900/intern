@@ -29,44 +29,45 @@
         <dt class="text-sm font-medium text-gray-500">電話番号</dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$engineer->phonenumber}}</dd>
       </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">メールアドレス</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$engineer->email}}</dd>
+      </div>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">郵便番号</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$engineer->postalcode}}</dd>
+      </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class="text-sm font-medium text-gray-500">住所</dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$engineer->prefecture}}{{$engineer->address}}</dd>
       </div>
-      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">メモ</dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$engineer->comment}}</dd>
-      </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class="text-sm font-medium text-gray-500">履歴書</dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-          <ul role="list" class="divide-y divide-gray-200 rounded-md border border-gray-200">
-            <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
-              <div class="flex w-0 flex-1 items-center">
-                <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
-                </svg>
-                <span class="ml-2 w-0 flex-1 truncate">{{$engineer->resume}}</span>
-              </div>
-            </li>          
-          </ul>
-        </dd>
+        <a href="{{ \Storage::url($engineer->resume) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+        <button class="text-sm shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                表示する
+        </button>
+        </a>
+      </dd>
+      </div>
 
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class="text-sm font-medium text-gray-500">職務経歴書</dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-          <ul role="list" class="divide-y divide-gray-200 rounded-md border border-gray-200">
-          <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
-              <div class="flex w-0 flex-1 items-center">
-                <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
-                </svg>
-                <span class="ml-2 w-0 flex-1 truncate">{{$engineer->job_history_sheet}}</span>
-              </div>
-            </li>      
-          </ul>
-        </dd>
+        <a href="{{ \Storage::url($engineer->job_history_sheet) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+        <button class="text-sm shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                表示する
+        </button>
+        </a>
+      </dd>
       </div>
-    </dl>
+
+
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">コメント</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$engineer->comment}}</dd>
+      </div>
   </div>
 </div>
 

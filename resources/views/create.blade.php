@@ -21,7 +21,7 @@
     <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">登録画面</h2>
   </div>
  
-  <form action="/new" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20 enctype='multipart/form-data'">
+  <form action="/new" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20" enctype='multipart/form-data'>
     @csrf
 
     <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
@@ -190,4 +190,6 @@
   </form>
 </div>
 </x-app-layout>
+
+
 
