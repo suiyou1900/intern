@@ -4,7 +4,7 @@
             {{ __('Engineer-Management') }}
         </h2>
     </x-slot>
- 
+   
    
 <div class="relative overflow-x-auto  sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-900">
@@ -12,9 +12,6 @@
             <tr>
                 <th scope="col" class="px-6 py-3">
                    ID
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    就職状態
                 </th>
                 <th scope="col" class="px-6 py-3">
                     名前
@@ -26,16 +23,7 @@
                     誕生日
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    採用状態
-                </th>
-                <th scope="col" class="px-6 py-3">
                     地域
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    エンジニアスキル
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    ヒューマンスキル
                 </th>
                 <th scope="col" class="px-6 py-3">
                     履歴書
@@ -60,49 +48,23 @@
                    {{$Engineer->id}}
                 </th>
                 <td class="px-6 py-4">
-                    <select>
-                        <option>未分類</option>
-                        <option>離職中</option>
-                        <option>就職中</option>
-                        <option>ハコブネ就職中</option>
-                    </select>
-                </td>
-                <td class="px-6 py-4">
                   {{$Engineer->first_name}}{{$Engineer->last_name}}
                 </td>
                 <td class="px-6 py-4">
-                 {{$Engineer->gender}}
+                 @if($Engineer->gender==1)
+                 男
+                 @else
+                 女
+                 @endif
                 </td>
                 <td class="px-6 py-4">
                     {{$Engineer->birthday}}
                 </td>
                 <td class="px-6 py-4">
-                <select>
-                        <option>未分類</option>
-                        <option>稼働中</option>
-                        <option>研修中</option>
-                        <option>営業中</option>
-                </select>
-                </td>
-                <td class="px-6 py-4">
                    {{$Engineer->prefecture}}
                 </td>
                 <td class="px-6 py-4">
-                <select>
-                        <option>Exllent</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                </select>
-                </td>
-                <td class="px-6 py-4">
-                <select>
-                        <option>Exllent</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                </select>
-                </td>
-                <td class="px-6 py-4">
-                <a href="/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                <a href="{{$Engineer->resume}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                 <button class="text-sm shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                 DL
                 </button>
@@ -110,7 +72,7 @@
                 </td>
                 <td class="px-6 py-4">
 
-                <a href="/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                <a href="{{$Engineer->job_history_}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                 <button class="text-sm shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                 DL
                 </button>

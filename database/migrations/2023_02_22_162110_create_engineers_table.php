@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('gender');
             $table->date('birthday');
             $table->string('email');
-            $table->integer('phonenumber');
+            $table->string('phonenumber');
             $table->string('prefecture');
             $table->string('address');
             $table->integer('postalcode');
@@ -28,11 +28,7 @@ return new class extends Migration
             $table->string('background');
             $table->string('resume');
             $table->string('job_history_sheet');
-            $table->text('comment');
-            $table->foreignId('employment_status_id');
-            $table->foreignId('in_house_status_id');
-            $table->foreignId('engineer_skill_id');
-            $table->foreignId('human_skill_id');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

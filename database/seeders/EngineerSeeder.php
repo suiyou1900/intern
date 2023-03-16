@@ -26,14 +26,11 @@ class EngineerSeeder extends Seeder
             'address'=>'福岡市博多区2-2-2',
             'postalcode'=>'8198199',
             'station'=>'博多駅',
-            'background'=>'2',
-            'resume'=>'',
+            'background'=>'1',
+            'resume'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
             'job_history_sheet'=>'',
             'comment'=>'テキストテキストテキストテキストテキストテキストテキスト',
-            'employment_status_id'=>'2',
-            'in_house_status_id'=>'2',
-            'engineer_skill_id'=>'2',
-            'human_skill_id'=>'2',        
+    
 
         ]);
 
@@ -51,13 +48,10 @@ class EngineerSeeder extends Seeder
             'postalcode'=>'1890002',
             'station'=>'銀座駅',
             'background'=>'1',
-            'resume'=>'',
-            'job_history_sheet'=>'',
+            'resume'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
+            'job_history_sheet'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
             'comment'=>'テキストテキストテキストテキストテキストテキストテキスト',
-            'employment_status_id'=>'3',
-            'in_house_status_id'=>'1',
-            'engineer_skill_id'=>'2',
-            'human_skill_id'=>'1',        
+      
 
         ]);
 
@@ -75,13 +69,10 @@ class EngineerSeeder extends Seeder
             'postalcode'=>'1690002',
             'station'=>'新大阪駅',
             'background'=>'2',
-            'resume'=>'',
-            'job_history_sheet'=>'',
+            'resume'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
+            'job_history_sheet'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
             'comment'=>'テキストテキストテキストテキストテキストテキストテキスト',
-            'employment_status_id'=>'2',
-            'in_house_status_id'=>'2',
-            'engineer_skill_id'=>'1',
-            'human_skill_id'=>'3',        
+      
 
         ]);
 
@@ -99,13 +90,10 @@ class EngineerSeeder extends Seeder
             'postalcode'=>'1602002',
             'station'=>'佐賀駅',
             'background'=>'2',
-            'resume'=>'',
-            'job_history_sheet'=>'',
+            'resume'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
+            'job_history_sheet'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
             'comment'=>'テキストテキストテキストテキストテキストテキストテキスト',
-            'employment_status_id'=>'1',
-            'in_house_status_id'=>'3',
-            'engineer_skill_id'=>'3',
-            'human_skill_id'=>'3',        
+       
 
         ]);
 
@@ -123,13 +111,10 @@ class EngineerSeeder extends Seeder
             'postalcode'=>'1002002',
             'station'=>'岡山駅',
             'background'=>'1',
-            'resume'=>'',
-            'job_history_sheet'=>'',
+            'resume'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
+            'job_history_sheet'=>'https://d3pl8hewtdyu3c.cloudfront.net/knowhow/rirekisho/download/01_A4_format.pdf',
             'comment'=>'テキストテキストテキストテキストテキストテキストテキスト',
-            'employment_status_id'=>'3',
-            'in_house_status_id'=>'2',
-            'engineer_skill_id'=>'1',
-            'human_skill_id'=>'2',        
+      
 
         ]);
     }
